@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'net.exsource'
+version = '1.1.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:24.0.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+    implementation 'commons-io:commons-io:2.11.0'
+
+    implementation 'com.github.vincentrussell:java-ini-parser:1.5'
+    implementation 'com.google.guava:guava:32.0.1-jre'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
+}
+
+//ToDo: change entries if the domain nexus.exsource.net reachable.
+String getPublishUrl() {
+    return version.endsWith("SNAPSHOT") ? "http://45.138.48.139:8081/repository/maven-snapshots/" : "http://45.138.48.139:8081/repository/maven-releases/"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+
+
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url getPublishUrl()
+
+            credentials {
+                username project.repoUser
+                password project.repoPassword
+            }
+        }
+    }
+}
