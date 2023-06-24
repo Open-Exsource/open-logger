@@ -1,7 +1,7 @@
 package net.exsource.openlogger;
 
 import net.exsource.openlogger.level.LogLevel;
-import net.exsource.openlogger.log.LogPacked;
+import net.exsource.openlogger.packet.LogPacked;
 import net.exsource.openlogger.template.DefaultLogger;
 import net.exsource.openlogger.util.ConsoleColor;
 

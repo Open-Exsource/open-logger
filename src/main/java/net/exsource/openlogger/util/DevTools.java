@@ -48,7 +48,9 @@ import java.util.*;
  * <p></p>
  * @since 1.0
  * @author Daniel Ramke, Niklas Tat
+ * @deprecated This class is old and will be replaced at open-utils/Commons.class.
  */
+@Deprecated
 @SuppressWarnings("unused")
 public class DevTools {
 

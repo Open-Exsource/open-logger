@@ -4,10 +4,15 @@ plugins {
 }
 
 group = 'net.exsource'
-version = '1.1.1-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+
+    maven {
+        allowInsecureProtocol = true
+        url = 'http://45.138.48.139:8081/repository/maven-public/'
+    }
 }
 
 test {
@@ -18,7 +23,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:24.0.1'
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
-    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'commons-io:commons-io:2.13.0'
 
     implementation 'com.github.vincentrussell:java-ini-parser:1.5'
     implementation 'com.google.guava:guava:32.0.1-jre'

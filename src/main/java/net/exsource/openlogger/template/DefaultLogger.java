@@ -2,7 +2,7 @@ package net.exsource.openlogger.template;
 
 import net.exsource.openlogger.Logger;
 import net.exsource.openlogger.level.LogLevel;
-import net.exsource.openlogger.log.LogPacked;
+import net.exsource.openlogger.packet.LogPacked;
 import net.exsource.openlogger.util.ConsoleColor;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
